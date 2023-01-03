@@ -40,7 +40,7 @@ fruit_choice = streamlit.text_input('What fruit would you like to add?')
 my_cur.execute("insert into fruit_load_list (fruit_name) values (fruit_choice)")
 
 
-def get_fruityvice_data(this_fruit_choice)
+def get_fruityvice_data(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
   fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
